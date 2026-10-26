@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilith - Livenblood Portal</title>
+    
+    <style>
+        .lilith_destaque_interno {
+            border-left: 4px solid #f72585;
+            padding-left: 12px;
+        }
+        #lilith_badge_status {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.5px;
+        }
+        .lilith_txt_glow {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body id="container" class="theme-purple-pink light-cards">
+
+
+    <header class="lilith_header_main">
+        <div class="lilith_brand_box">
+            <i class="fa-brands fa-twitch" style="font-size: 1.8rem; color: #9146ff;"></i>
+            <h1 class="lilith_txt_glow">Livenblood</h1>
+        </div>
+
+        <div class="lilith_header_controls">
+            <button class="lilith_btn_toggle_mode" onclick="lilithAlternarModoCards()">
+                <span class="lilith_icon_mode">🌓</span>
+                <span id="lilith_mode_text">Cards: Claro</span>
+            </button>
+            
+            <select id="lilith_theme_select" class="lilith_select_theme" onchange="lilithTrocarTemaSelect(this.value)">
+                <option value="theme-purple-pink">Roxo ➔ Rosa</option>
+                <option value="theme-red-fire">Vermelho ➔ Laranja Fogo</option>
+                <option value="theme-emerald-forest">Verde Musgo Escuro ➔ Verde Claro</option>
+                <option value="theme-cyber-blue">Azul Escuro ➔ Azul Claro</option>
+                <option value="theme-orange-yellow">Laranja ➔ Amarelo</option>
+            </select>
+        </div>
+    </header>
+
+    <nav class="lilith_menu_nav">
+        <ul class="lilith_menu_inner">
+            <li><a href="#inicio" class="lilith_tab_btn active" onclick="lilithMudarAba('inicio', event)">Início</a></li>
+            <li><a href="#linktree" class="lilith_tab_btn" onclick="lilithMudarAba('linktree', event)">Redes Sociais</a></li>
+            <li><a href="#clipes" class="lilith_tab_btn" onclick="lilithMudarAba('clipes', event)">Clipes & Destaques</a></li>
+            <li><a href="#setup" class="lilith_tab_btn" onclick="lilithMudarAba('setup', event)">Meu Setup</a></li>
+            <li><a href="#agenda" class="lilith_tab_btn" onclick="lilithMudarAba('agenda', event)">Grade de Lives</a></li>
+            <li><a href="#feedback" class="lilith_tab_btn" onclick="lilithMudarAba('feedback', event)">Enviar Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="lilith_banner_hero">
+        <div class="lilith_card_hero lilith_card">
+            <div class="lilith_avatar_container">
+                <img src="img/liven.jpg" alt="Avatar Livenblood" class="lilith_avatar_img" onerror="this.src='https://picsum.photos/seed/livenblood/150/150'">
+            </div>
+            <h2>livenblood</h2>
+            <p>Afiliada da twitch e streamer em outras plataformas, seja bem vindo/a!!</p>
+            <div class="lilith_hero_btns">
+                <a href="https://www.twitch.tv/livenblood" target="_blank" rel="noopener noreferrer" class="lilith_btn_primary">
+                    <span>▶</span> Live Ao Vivo
+                </a>
+                <button class="lilith_btn_secondary" onclick="lilithMudarAba('linktree', event)">
+                    <span>🔗</span> Minhas Redes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main class="lilith_main_content">
+
+        <section id="inicio" class="lilith_tab_page active">
+            <div class="lilith_card lilith_welcome_card lilith_destaque_interno">
+                <h3>🩸 Boas vinda ao meu canal 🩸</h3>
+                <p>Este é o portal das minhas transmissões ao vivo! Aqui você encontra todas as minhas redes sociais, alguns clipes, a programação de lives e o formulário de feedback para sua opinião.</p>
+            </div>
+
+            <div class="lilith_grid_stats">
+                <article class="lilith_card lilith_stat_item">
+                    <i class="fa-brands fa-twitch" style="font-size: 2rem; color: #9146ff;"></i>
+                    <h3>146</h3>
+                    <p>Seguidores Twitch</p>
+                </article>
+                <article class="lilith_card lilith_stat_item">
+                    <i class="fa-brands fa-youtube" style="font-size: 2rem; color: #f00020;"></i>
+                    <h3>39</h3>
+                    <p>Inscritos YouTube</p>
+                </article>
+                <article class="lilith_card lilith_stat_item">
+                    <img src="https://cdn.simpleicons.org/kick/53fc18" alt="Kick" style="width: 2rem; height: 2rem; vertical-align: middle;">
+                    <h3>8</h3>
+                    <p>seguidores na kick</p>
+                </article>
+                <article class="lilith_card lilith_stat_item">
+                    <i class="fa-solid fa-gamepad" style="font-size: 2.5rem; color: #9146ff;"></i>
+                    <h3>396h06m</h3>
+                    <p>Horas transmitidas</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="linktree" class="lilith_tab_page">
+            <div class="lilith_card text-center">
+                <h3>⛧🩸 Central de Redes Sociais 🩸⛧</h3>
+                <p>Todas as minhas redes aqui:</p>
+            </div>
+
+            <div class="lilith_linktree_buttons">
+                <a href="https://pixie.gg/liven" target="_blank" class="lilith_link_card">
+                    <span class="lil_stat_icon">🩸</span>
+                    <span class="lilith_link_text">⛧🩸 Doações 🩸⛧</span>
+                    <span class="lilith_link_arrow">›</span>
+                </a>
+                <a href="https://www.twitch.tv/livenblood" target="_blank" class="lilith_link_card">
+                    <span class="lilith_link_icon"><i class="fa-brands fa-twitch" style="color: #9146ff;"></i></span>
+                    <span class="lilith_link_text">⛧🩸 Twitch 🩸⛧</span>
+                    <span class="lilith_link_arrow">›</span>
+                </a>
+                <a href="https://youtube.com/@livenblood" target="_blank" class="lilith_link_card">
+                    <span class="lilith_link_icon"><i class="fa-brands fa-youtube" style="color: #f00020;"></i></span>
+                    <span class="lilith_link_text">⛧🩸 YouTube 🩸⛧</span>
+                    <span class="lilith_link_arrow">›</span>
+                </a>
+                <a href="https://instagram.com/livenblood" target="_blank" class="lilith_link_card">
+                    <span class="lilith_link_icon"><i class="fa-brands fa-instagram" style="color: #E1306C;"></i></span>
+                    <span class="lilith_link_text">⛧🩸 Instagram 🩸⛧</span>
+                    <span class="lilith_link_arrow">›</span>
+                </a>
+                <a href="https://tiktok.com/@livenblood" target="_blank" class="lilith_link_card">
+                    <span class="lilith_link_icon"><i class="fa-brands fa-tiktok" style="color: #000000;"></i></span>
+                    <span class="lilith_link_text">⛧🩸 TikTok 🩸⛧</span>
+                    <span class="lilith_link_arrow">›</span>
+                </a>
+                <a href="https://kick.com/livenblood" target="_blank" class="lilith_link_card">
+                    <img src="https://cdn.simpleicons.org/kick/53fc18" alt="Kick" style="width: 1rem; height: 1rem; vertical-align: middle;">
+                    <span class="lilith_link_text">⛧🩸 Kick 🩸⛧</span>
+                    <span class="lilith_link_arrow">›</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="clipes" class="lilith_tab_page">
+            <div class="lilith_clips_grid">
+            <article class="lilith_clip_card">
+                <img src="img/melhor rell ft.png" alt="A melhor Rell do prata" onerror="this.src='https://picsum.photos/seed/clip1/400/220'">
+                <h4>A melhor Rell do prata</h4>
+                <p>League Of Legends</p>
+                <button class="lilith_btn_primary" style="margin-top: 10px;" onclick="lilithAbrirModalVideo('A melhor Rell do prata', 'melhor rell.mp4')">▶ Assistir Clipe</button>
+            </article>
+
+            <article class="lilith_clip_card">
+                <img src="img/aprendiz feldspato.png" alt="Aprendiz do Feldspato" onerror="this.src='https://picsum.photos/seed/clip2/400/220'">
+                <h4>Aprendiz do Feldspato</h4>
+                <p>Outer Wilds</p>
+                <button class="lilith_btn_primary" style="margin-top: 10px;" onclick="lilithAbrirModalVideo('Aprendiz do Feldspato', 'feldspato.mp4')">▶ Assistir Clipe</button>
+            </article>
+
+            <article class="lilith_clip_card">
+                <img src="img/tadinha gente.png" alt="Tadinha gente" onerror="this.src='https://picsum.photos/seed/clip3/400/220'">
+                <h4>Tadinha gente</h4>
+                <p>R.E.P.O</p>
+                <button class="lilith_btn_primary" style="margin-top: 10px;" onclick="lilithAbrirModalVideo('Tadinha gente', 'tadinha.mp4')">▶ Assistir Clipe</button>            
+            </article>
+        </div>
+    </div>
+        </section>
+
+        <section id="setup" class="lilith_tab_page">
+            <div class="lilith_card">
+                <h3>🖥️ Meu Setup </h3>
+                <p>⛧🩸Configuração do meu computador e periféricos 🩸⛧:</p>
+
+                <div class="lilith_setup_grid">
+                    <article class="lilith_setup_item">
+                        <h4>⛧🩸 Computador 🩸⛧</h4>
+                        <ul>
+                            <li><strong>CPU:</strong> Amd Ryzen 7 5700x am4</li>
+                            <li><strong>GPU:</strong> RTX 5060 ti 8gb</li>
+                            <li><strong>PLACA-MÃE:</strong> Gigabyte B550M K</li>
+                            <li><strong>Memória Ram:</strong> Kingston fury RGB 2x16 DDR4 3200MHz</li>
+                            <li><strong>Fonte:</strong> Duex 600FSE</li>
+                            <li><strong>Armazenamento:</strong> SSD nvme Kingston 1TB</li>
+                            <li><strong>Water cooler:</strong> Kalkan Iota 360mm</li>
+                            <li><strong>Gabinete:</strong> Mad Rock dark</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="lilith_setup_item lilith_main_setup">
+                        <h4>⛧🩸 Áudio, Câmera & Telas 🩸⛧</h4>
+                        <ul>
+                            <li><strong>Microfone:</strong> Zealsound BKD11</li>
+                            <li><strong>Headset</strong> um phone bluetooth da shoppe</li>
+                            <li><strong>Câmera:</strong> Kross Elegance 720p</li>
+                            <li><strong>Monitores:</strong> HQ 20P</li>
+                        </ul>
+                    </article>
+
+                    <aside class="lilith_setup_item">
+                        <h4>⛧🩸 Periféricos 🩸⛧</h4>
+                        <ul>
+                            <li><strong>Teclado:</strong> Gaming Master Shuriken</li>
+                            <li><strong>Mouse:</strong> Attack Shark x11</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="agenda" class="lilith_tab_page">
+            <div class="lilith_card">
+                <h3>⛧🩸 Programação Semanal de Lives 🩸⛧</h3>
+                
+                <div class="lilith_table_responsive">
+                    <table class="lilith_table_schedule">
+                        <thead>
+                            <tr>
+                                <th>Dia</th>
+                                <th>Horário</th>
+                                <th>Jogo</th>
+                                <th>Plataforma</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Segunda</td><td>16:00 - 20:00</td><td>Jogos no geral</td><td>Twitch, Kick e youtube</td><td><span class="lilith_badge_conf">Confirmado</span></td></tr>
+                            <tr><td>Terça</td><td>16:00 - 20:00</td><td>Jogos no geral</td><td>Twitch, Kick e youtube</td><td><span class="lilith_badge_conf">Confirmado</span></td></tr>
+                            <tr><td>Quarta</td><td>16:00 - 20:00</td><td>Jogos no geral</td><td>Twitch, Kick e youtube</td><td><span class="lilith_badge_conf">Confirmado</span></td></tr>
+                            <tr><td>Quinta</td><td>16:00 - 20:00</td><td>Jogos no geral</td><td>Twitch, Kick e youtube</td><td><span class="lilith_badge_conf">Confirmado</span></td></tr>
+                            <tr><td>Sexta</td><td>16:00 - 20:00</td><td>Jogos Indie</td><td>Twitch, Kick e youtube</td><td><span class="lilith_badge_conf">Confirmado</span></td></tr>
+                            <tr><td>Sábado</td><td>16:00 - 20:00</td><td>Filminho</td><td>Twitch, Kick e youtube</td><td><span class="lilith_badge_conf">Confirmado</span></td></tr>
+                            <tr><td>Domingo</td><td>-- OFF --</td><td>Descanso</td><td>--</td><td><span class="lilith_badge_off">Folga</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 style="margin-top: 30px;">❓ Perguntas Frequentes</h3>
+                <div class="lilith_accordion">
+                    <div class="lilith_acc_item">
+                        <button class="lilith_acc_btn" onclick="lilithToggleAccordion(this)">Posso jogar com a liven?</button>
+                        <div class="lilith_acc_panel"><p>Sim, futuramente quero criar um discord para jogar com vocês!</p></div>
+                    </div>
+                    <div class="lilith_acc_item">
+                        <button class="lilith_acc_btn" onclick="lilithToggleAccordion(this)">Qual é a idade/onde mora?</button>
+                        <div class="lilith_acc_panel"><p>Tenho 19 e sou de Curitiba</p></div>
+                    </div>
+                    <div class="lilith_acc_item">
+                        <button class="lilith_acc_btn" onclick="lilithToggleAccordion(this)">Como dar sugestões de jogos?</button>
+                        <div class="lilith_acc_panel"><p>Sempre pode indicar jogos na lives ou na caixa de feedback.</p></div>
+                    </div>
+                    <div class="lilith_acc_item">
+                        <button class="lilith_acc_btn" onclick="lilithToggleAccordion(this)">Como fazer doações para a livenblood?</button>
+                        <div class="lilith_acc_panel"><p>Pelo primeiro link na aba das minhas redes sociais, ou doando diretamente nas plataformas de streaming</p></div>
+                    </div>
+                    <div class="lilith_acc_item">
+                        <button class="lilith_acc_btn" onclick="lilithToggleAccordion(this)">Faz live todo dia?</button>
+                        <div class="lilith_acc_panel"><p>Apenas segunda a sábado. Domingo é meu dia de vagabundagem ner.</p></div>
+                    </div>
+                    <div class="lilith_acc_item">
+                        <button class="lilith_acc_btn" onclick="lilithToggleAccordion(this)">Quais são seus jogos favoritos?</button>
+                        <div class="lilith_acc_panel"><p>No momento seria o Aniimo, Cyberpunk 2077 e Devil May Cry.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback" class="lilith_tab_page">
+            <div class="lilith_card">
+                <h3>⛧🩸 Formulário de Feedback 🩸⛧</h3>
+                <div id="lilith_form_alert" class="lilith_alert_box" style="display: none;"></div>
+
+                <form id="lilith_feedback_form" class="lilith_form_grid" onsubmit="lilithValidarFormulario(event)" novalidate>
+                    <fieldset>
+                        <legend>Envie sua opinião sobre o meu trabalho!</legend>
+                        
+                        <div class="lilith_form_group">
+                            <label for="f_nome">1. Nome ou Nick *</label>
+                            <input type="text" id="f_nome">
+                        </div>
+                        <div class="lilith_form_group">
+                            <label for="f_email">2. E-mail *</label>
+                            <input type="email" id="f_email">
+                        </div>
+                        <div class="lilith_form_group">
+                            <label for="f_plataforma">3. Onde assiste? *</label>
+                            <select id="f_plataforma">
+                                <option value="">Selecione...</option>
+                                <option value="twitch">Twitch</option>
+                                <option value="youtube">YouTube</option>
+                                <option value="kick">Kick</option>
+                            </select>
+                        </div>
+                        <div class="lilith_form_group">
+                            <label for="f_nota">4. Nota da Live (1 a 5) *</label>
+                            <input type="number" id="f_nota" min="1" max="5">
+                        </div>
+                        <div class="lilith_form_group lilith_full_width">
+                            <label>5. Qual o seu jogo/tema favorito? *</label>
+                            <div class="lilith_radio_group">
+                                <label><input type="radio" name="f_quadro" value="fps"> FPS</label>
+                                <label><input type="radio" name="f_quadro" value="terror"> Terror</label>
+                                <label><input type="radio" name="f_quadro" value="chatting"> Bate-papo</label>
+                            </div>
+                        </div>
+                        <div class="lilith_form_group lilith_full_width">
+                            <label>6. Frequência que assiste? *</label>
+                            <div class="lilith_radio_group">
+                                <label><input type="radio" name="f_freq" value="sempre"> Sempre</label>
+                                <label><input type="radio" name="f_freq" value="asvezes"> Às vezes</label>
+                            </div>
+                        </div>
+                        <div class="lilith_form_group lilith_full_width">
+                            <label>7. Receber notificações? *</label>
+                            <label><input type="checkbox" id="f_notif"> Sim, quero receber por e-mail</label>
+                        </div>
+                        <div class="lilith_form_group lilith_full_width">
+                            <label for="f_mensagem">8. Mensagem *</label>
+                            <textarea id="f_mensagem" rows="3" placeholder="Mínimo 10 caracteres..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="lilith_btn_primary">Enviar Feedback</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="lilith_footer_main">
+        <p>&copy; 2026 Livenblood</p>
+    </footer>
+
+    <div id="lilith_modal_overlay" class="lilith_modal_overlay" style="display: none;" onclick="lilithFecharModal(event)">
+    <div class="lilith_modal_body lilith_card" style="max-width: 600px; width: 95%;">
+        <span class="lilith_modal_close" onclick="lilithFecharModalForcado()">&times;</span>
+        <h3 id="lilith_modal_title" style="margin-bottom: 15px; text-align: center;">Modal</h3>
+        <div id="lilith_modal_content" style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 12px; overflow: hidden;"></div>
+    </div>
+</div>
+
+    <div id="lilith_badge_status" class="lilith_badge_status">
+        Fundo: Roxo ➔ Rosa
+    </div>
+
+</body>
+</html>
